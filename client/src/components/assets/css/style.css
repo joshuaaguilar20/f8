@@ -1,0 +1,18 @@
+*, body {
+    background-color: #fff !important;
+}
+
+.header {
+    width: 15 !important;
+    height: 15% !important;
+}
+
+.home-button {
+    min-height: 115px !important;
+    min-width: 200px !important;
+    margin: 5% 25% !important;
+    background-color: #3C5A99 !important;
+    color: #fff !important;
+    font-size: 2rem;
+    box-shadow: 5px 5px 5px grey;
+}

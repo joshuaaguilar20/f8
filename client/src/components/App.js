@@ -8,6 +8,7 @@ import Dashboard from './Dashboard';
 import { PrivateRoute } from './PrivateRoute';
 import AdminLayout from './layouts/Admin/Admin';
 import RTLLayout from "./layouts/RTL/RTL.jsx";
+import Home from './Home';
 import "./assets/demo/demo.css";
 import "./assets/css/nucleo-icons.css";
 
@@ -24,12 +25,7 @@ class App extends React.Component {
         <Router history={history}>
           <div>
             <Switch>
-              <PrivateRoute isAuthenticated={this.props.auth} path="/Dashboard" exact component={Dashboard} />
-              <Route path="/register" exact component={RenderRegister} />
-              <Route path="/admin" render={props => <AdminLayout {...props} />} />
-              <Route path="/rtl" render={props => <RTLLayout {...props} />} />
-              <Redirect from="/" to="/admin/dashboard" />
-
+              <Route path="/" exact component={Home} />
             </Switch>
           </div>
         </Router>
@@ -43,3 +39,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, actions)(App)
+
+// <Route path="/infantCPR" exact component={infantCPR} />
+// <Route path="/childCPR" exact component={childCPR} />
+// <Route path="/adultCPR" exact component={adultCPR} />
