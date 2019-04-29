@@ -1,8 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import history from '../history';
-import * as actions from '../actions';
-import { connect } from 'react-redux';
+
 import AdminLayout from './layouts/Admin/Admin';
 import RTLLayout from "./layouts/RTL/RTL.jsx";
 import "./assets/demo/demo.css";
