@@ -20,7 +20,7 @@ var routes = [
   },
   {
     path: "/dashboard",
-    name: "Dashboard",
+    name: "Statistics",
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
@@ -28,7 +28,7 @@ var routes = [
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "Adult CPR",
     rtlName: "الرموز",
     icon: "tim-icons icon-atom",
     component: Icons,
@@ -36,7 +36,7 @@ var routes = [
   },
   {
     path: "/map",
-    name: "Map",
+    name: "Languages",
     rtlName: "خرائط",
     icon: "tim-icons icon-pin",
     component: Map,
@@ -52,7 +52,7 @@ var routes = [
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Language Processing",
     rtlName: "ملف تعريفي للمستخدم",
     icon: "tim-icons icon-single-02",
     component: UserProfile,

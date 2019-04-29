@@ -41,13 +41,7 @@ class Notifications extends React.Component {
     var options = {};
     options = {
       place: place,
-      message: (
-        <div>
-          <div>
-            Welcome to <b>Black Dashboard React</b>
-          </div>
-        </div>
-      ),
+
       type: type,
       icon: "tim-icons icon-bell-55",
       autoDismiss: 7
@@ -65,12 +59,10 @@ class Notifications extends React.Component {
             <Col md="6">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Notifications Style</CardTitle>
+                  <CardTitle tag="h4">Langauge Translator</CardTitle>
                 </CardHeader>
                 <CardBody>
-                  <Alert color="info">
-                    <span>This is a plain notification</span>
-                  </Alert>
+                 
                   <UncontrolledAlert color="info">
                     <span>This is a notification with close button.</span>
                   </UncontrolledAlert>
