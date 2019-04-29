@@ -1,16 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('./models/User');
-
 const cookieSession = require('cookie-session');
-const passport = require('passport');
+// const passport = require('passport');
 var path = require('path');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 var flash = require('connect-flash');
-require('./services/passport');
-require('./services/facebookAuth');
-require('./services/localStrategy');
+// require('./services/passport');
+// require('./services/facebookAuth');
+// require('./services/localStrategy');
 
 
 
@@ -41,11 +40,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /* Routes */
-require('./routes/localRoutes')(app);
-require('./routes/authRoutes')(app);
-require('./routes/fbRoutes')(app);
-
-
+// require('./routes/localRoutes')(app);
+// require('./routes/authRoutes')(app);
+// require('./routes/fbRoutes')(app);
 
 
 if (process.env.NODE_ENV === 'production') {

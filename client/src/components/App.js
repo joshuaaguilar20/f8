@@ -10,7 +10,7 @@ import AdminLayout from './layouts/Admin/Admin';
 import RTLLayout from "./layouts/RTL/RTL.jsx";
 import "./assets/demo/demo.css";
 import "./assets/css/nucleo-icons.css";
-
+import Test from './test';
 
 class App extends React.Component {
   componentDidMount() {
@@ -28,8 +28,8 @@ class App extends React.Component {
               <Route path="/register" exact component={RenderRegister} />
               <Route path="/admin" render={props => <AdminLayout {...props} />} />
               <Route path="/rtl" render={props => <RTLLayout {...props} />} />
-              <Redirect from="/" to="/admin/dashboard" />
 
+              <Route path="/test" exact component={Test} />
             </Switch>
           </div>
         </Router>
