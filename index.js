@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
 
 
 mongoose.connection.close();
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true }).catch((reason) => {
+mongoose.connect('mongodb://joshuaaguilar20:J0shua11@ds113122.mlab.com:13122/email-dev', { useNewUrlParser: true }).catch((reason) => {
   console.log('Unable to connect to the mongodb instance. Error: ', reason);
 });
 
