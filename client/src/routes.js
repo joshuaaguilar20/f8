@@ -6,9 +6,18 @@ import Rtl from "./views/Rtl.jsx";
 import TableList from "./views/TableList.jsx";
 import Typography from "./views/Typography.jsx";
 import UserProfile from "./views/UserProfile.jsx";
+import saveALife from "./views/saveALife"
 
 
 var routes = [
+   {
+    path: "/save-a-life",
+    name: "Save a Life",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-chart-pie-36",
+    component: saveALife,
+    layout: "/admin"
+  },
   {
     path: "/dashboard",
     name: "Dashboard",
