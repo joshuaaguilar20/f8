@@ -1,10 +1,8 @@
 import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
-
 import history from '../history';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
-
 import AdminLayout from './layouts/Admin/Admin';
 import RTLLayout from "./layouts/RTL/RTL.jsx";
 import "./assets/demo/demo.css";
@@ -13,20 +11,19 @@ import Test from './test';
 import Translate from '../helpers/translate';
 
 class App extends React.Component {
-  componentDidMount() {
-    //Adding AnyScripts We Need
 
-  }
-
+  /* DO NOT DELETE OUR ROUTES****  */
   render() {
     return (
       <div>
         <Router history={history}>
           <div>
             <Switch>
-              <Route path="/admin" render={props => <AdminLayout {...props} />} />
+
+              <Route path="/" render={props => <AdminLayout {...props} />} />
               <Route path="/rtl" render={props => <RTLLayout {...props} />} />
               <Route path="/test" exact component={Test} />
+
               <Route path="/translate" exact component={Translate} />
               <Route path='/hello' render={props => <AdminLayout {...props} />} />
             </Switch>
@@ -37,8 +34,5 @@ class App extends React.Component {
   };
 }
 
-const mapStateToProps = (state) => {
-  return { auth: state.auth };
-};
 
-export default connect(mapStateToProps, actions)(App)
+export default App
