@@ -1,10 +1,25 @@
 import React from 'react';
-
+import Lan from '../apis/data'
+import {
+    Button,
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    CardText,
+    FormGroup,
+    Form,
+    Input,
+    Row,
+    Col
+} from "reactstrap";
 
 const { useEffect, useRef, useState } = React;
 
+
 const useSpeechSynthesis = () => {
     const [voices, setVoices] = useState([]);
+    const [lang, setLang] = useState([]);
     const synth = useRef();
 
     const updateVoices = () => {
@@ -33,13 +48,14 @@ const useSpeechSynthesis = () => {
     return ([
         voices,
         speak,
+        lang
     ]);
 }
 
 const Brother = () => {
     const [voices, speak] = useSpeechSynthesis();
     const [currentVoice, setCurrentVoice] = useState();
-    const [text, setText] = useState('may i have some hooks, please');
+    const [text, setText] = useState("Shout and gently tap the child on the shoulder. If there is no response and not breathing or not breathing normally, position the infant on his or her back and begin CPR.");
 
     useEffect(() => {
         if (!currentVoice) {
@@ -61,21 +77,74 @@ const Brother = () => {
     }
 
     return (
-        <form className="contain" onSubmit={handleSpeak}>
-            <div className="select">
-                <select value={currentVoice ? currentVoice.name : ''} onChange={handleVoiceChange}>
-                    {voices.map(v => (
-                        <option value={v.name}>{`${v.name}`}</option>
-                    ))}
-                </select>
-            </div>
-
-            <input type="text" value={text} onChange={handleTextChange} />
-
-            <button type="submit"></button>
-        </form>
+      <>
+        <div className="content">
+          <Row>
+            <Col md="12">
+              <Card>
+                <Form className="contain" onSubmit={handleSpeak}  >
+                <CardHeader>
+                  <h5 className="title">Natural language processing</h5>
+                </CardHeader>
+                <CardBody>
+                    <Row>
+                      <Col className="pr-md-1" md="5">
+                       
+                          <label>Select Voice </label>
+                         
+                      </Col>
+                     
+                  
+                    </Row>
+                    <Row>
+                      <Col className="pr-md-1" md="6">
+                                            <select value={currentVoice ? currentVoice.name : ''} onChange={handleVoiceChange}>
+                                 {voices.map(v => (
+                                        <option value={v.name}>{`${v.name}`}</option>
+                                    ))}
+                               </select>
+                      </Col>
+                    </Row>
+                    <Row>
+                <Col className="pr-md-1" md="6" id="google_translate_element"></Col>
+    
+                    </Row>
+                    <Row>
+                      <Col md="8">
+                        
+                          <label>About Me</label>
+                          <Input
+                            cols="80"
+                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
+                            that two seat Lambo."
+                            placeholder="Here can be your description"
+                            rows="4"
+                            type="textarea"
+                            onChange={handleTextChange}
+                            value={text}                        
+                          />
+                      </Col>
+                    </Row>
+                  
+                </CardBody>
+                <CardFooter>
+                  <Button className="btn-fill" color="primary" type="submit">
+                    Speak
+                  </Button>
+                  
+                                </CardFooter>
+                        </Form>
+              </Card>
+            </Col>
+            
+          </Row>
+        </div>
+      </>
     );
-};
+  }
 
 
-export default Brother
+export default Brother;
+
+
+  

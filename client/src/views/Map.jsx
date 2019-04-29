@@ -1,6 +1,6 @@
 import React from "react";
 // react plugin used to create google maps
-
+import Test from '../components/test';
 
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
@@ -13,10 +13,7 @@ class Map extends React.Component {
       <>
         <div className="content">
           <Row>
-            <Col md="12">
-
-
-            </Col>
+            <Test />
           </Row>
         </div>
       </>
