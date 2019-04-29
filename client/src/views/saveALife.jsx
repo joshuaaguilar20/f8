@@ -1,36 +1,56 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import * as actions from "../actions";
-import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col } from "reactstrap";
-import cpr from '../images/cpr.gif'
-import sampleImage from '../images/placeimg_640_480_nature.jpg'
+import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button } from "reactstrap";
+import cpr from '../images/childgif.gif'
+import cpr2 from '../images/child3.2019-04-29 15_47_54.gif'
+import Welcome from '../components/childCPR/Welcome'
+import SceneSafety from '../components/childCPR/SceneSafety'
+import Responsiveness from '../components/childCPR/Responsiveness'
+import Collapse from '../components/childCPR/Collapse'
+import ChildCPR from '../components/childCPR/ChildCPR'
 
 class SaveALife extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      step:1
+    }
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick = (step)=> {
+    this.setState({
+      step: step
+    })
+  }
   render(){
-    return(
-       <>
-        <div className="content">
-          <Row>
-            <Col md="3">
-             <div>
-             <Card>
-               <CardImg src={sampleImage} style={{width:200,height:200}}></CardImg>
-               <CardBody>
-                 <CardText>
-                  supporting content
-                 </CardText>
-               </CardBody>
-             </Card>
-               </div>
-            </Col>
-          </Row>
-        </div>
-      </>
-    )
+    switch(this.state.step){
+      case 1:
+      return(
+        <Welcome onChange={this.onClick}/>
+      )
+      case 2:
+        return(
+          <SceneSafety onChange={this.onClick}/>
+        )
+        case 3:
+        return(
+          <Responsiveness onChange={this.onClick}/>
+        )
+        case 6:
+        return(
+          <Collapse onChange={this.onClick}/>
+        )
+        case 8:
+        return(
+          <ChildCPR onChange={this.onClick}/>
+        )
+
+      default:  return(
+        <Welcome onChange={this.onClick}/>
+      )
+    }
   }
 }
 
-export default connect(
-    null,
-    actions
-)(SaveALife);
+export default SaveALife
