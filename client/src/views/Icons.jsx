@@ -1,7 +1,17 @@
 import React from "react";
 
 // reactstrap components
-import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
+import {
+  Alert,
+  UncontrolledAlert,
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  CardTitle,
+  Row,
+  Col
+} from "reactstrap";
 
 class Icons extends React.Component {
   render() {
@@ -12,11 +22,7 @@ class Icons extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <h5 className="title">What ever Data from API </h5>
-                  <p className="category">
-                    Handcrafted by our friends from{" "}
-                    <a href="https://nucleoapp.com/?ref=1712">Nucleo-App</a>
-                  </p>
+
                 </CardHeader>
                 <CardBody className="all-icons">
                   <Row>
