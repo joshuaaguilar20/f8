@@ -18,7 +18,6 @@ class App extends React.Component {
         <Router history={history}>
           <div>
             <Switch>
-
               <Route path="/" render={props => <AdminLayout {...props} />} />
               <Route path="/rtl" render={props => <RTLLayout {...props} />} />
               <Route path="/test" exact component={Test} />
