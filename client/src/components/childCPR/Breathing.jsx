@@ -21,7 +21,11 @@ class Breathing extends React.Component {
         </Row>
         <Row>
           <Col md='3'>
-          <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
+          <Card>
+            <CardBody>
+              <CardTitle style={styles.cardTitle}>{prompt}</CardTitle>
+            </CardBody>
+          </Card>
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(3)}>Yes</Button>
@@ -33,6 +37,13 @@ class Breathing extends React.Component {
     </div>
       </>
     )
+  }
+}
+
+const styles = {
+  cardTitle : {
+    fontSize: 36,
+    fontWeight: 'bold'
   }
 }
 

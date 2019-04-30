@@ -6,6 +6,7 @@ try {
   var recognition = new SpeechRecognition();
   speechSynthesis.cancel()
   var u = new SpeechSynthesisUtterance();
+  u.text = this.props.prompt
 }
 catch (e) {
   console.error(e);
@@ -13,13 +14,43 @@ catch (e) {
 }
 
 class VoiceCard extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       listening: false
     }
     this.child = React.createRef();
     this.toggleListen = this.toggleListen.bind(this)
+  }
+
+  handleListen = () => {
+    console.log('I am Listening ')
+    if (this.state.listening) recognition.start()
+
+    let finalTranscript = ''
+    recognition.onresult = event => {
+      let interimTranscript = ''
+
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) finalTranscript += transcript + ' ';
+        else interimTranscript += transcript;
+      }
+      document.getElementById('interim').innerHTML = interimTranscript
+      document.getElementById('final').innerHTML = finalTranscript
+      recognition.onend = function () {
+        console.log('Speech recognition service disconnected');
+
+        recognition.stop()
+        if (finalTranscript.includes('yes') || interimTranscript.includes('yes')) {
+        //  this.props.onChange
+        }
+        else if(finalTranscript.includes('no') || interimTranscript.includes('no')) {
+          alert('Follow up with Emergency Services if Concerns Presist')
+        }
+      }
+
+    }
   }
 
   toggleListen() {
@@ -29,6 +60,7 @@ class VoiceCard extends React.Component {
   }
 
   render(){
+    console.log(this.props.prompt)
     return (
     <Card>
     <CardHeader>

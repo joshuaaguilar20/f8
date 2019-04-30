@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button } from "reactstrap";
+import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button, CardTitle } from "reactstrap";
 import {textToSpeech} from '../../helpers/textToSpeech'
 import VoiceCard from '../../views/VoiceCard'
 
@@ -25,9 +25,9 @@ class SceneSafety extends React.Component {
      <Row>
           <Col md='8'>
           <VoiceCard/>
-          <Alert color='success' style={{fontSize:'42px'}}>{(this.state.unsafe)?prompt:prompt2}</Alert>
           <Card>
             <CardBody>
+              <CardTitle style={styles.cardTitle}>{prompt}</CardTitle>
               <CardImg src='https://s3.us-east-2.amazonaws.com/save-a-life/checkforsafety.gif' />
             </CardBody>
           </Card>
@@ -49,6 +49,13 @@ class SceneSafety extends React.Component {
     </div>
       </>
     )
+  }
+}
+
+const styles = {
+  cardTitle : {
+    fontSize: 36,
+    fontWeight: 'bold'
   }
 }
 

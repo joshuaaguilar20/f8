@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button } from "reactstrap";
+import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button, CardTitle } from "reactstrap";
 import { textToSpeech } from '../../helpers/textToSpeech'
 import  VoiceCard  from '../../views/VoiceCard'
 
@@ -22,12 +22,16 @@ class SaveALife extends React.Component {
         <div className="content">
         <Row>
           <Col md='8'>
-          <VoiceCard/>
+          <VoiceCard prompt={prompt}/>
           </Col>
         </Row>
         <Row >
           <Col md='8'>
-          <Alert color='success' style={{fontSize:42}}>{prompt}</Alert>
+          <Card>
+            <CardBody>
+              <CardTitle style={styles.cardTitle}>{prompt}</CardTitle>
+            </CardBody>
+          </Card>
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(2)}>Yes</Button>
@@ -39,6 +43,13 @@ class SaveALife extends React.Component {
         </div>
       </>
     )
+  }
+}
+
+const styles = {
+  cardTitle : {
+    fontSize: 36,
+    fontWeight: 'bold'
   }
 }
 

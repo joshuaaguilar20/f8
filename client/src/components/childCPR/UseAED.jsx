@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button } from "reactstrap";
+import { Card, CardHeader, CardBody, CardImg, CardText, Row, Col, Alert, Button, CardTitle } from "reactstrap";
 import {textToSpeech} from '../../helpers/textToSpeech'
 import { text } from 'body-parser';
 import  VoiceCard  from '../../views/VoiceCard'
@@ -18,11 +18,15 @@ class useAED extends React.Component {
      <Row>
           <Col md='8'>
           <VoiceCard/>
+          <Card>
+            <CardBody>
+              <CardTitle style={styles.cardTitle}>{prompt}</CardTitle>
+            </CardBody>
+          </Card>
           </Col>
         </Row>
         <Row>
           <Col md='8'>
-          <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(1)}>Restart</Button>
@@ -33,6 +37,13 @@ class useAED extends React.Component {
     </div>
       </>
     )
+  }
+}
+
+const styles = {
+  cardTitle : {
+    fontSize: 36,
+    fontWeight: 'bold'
   }
 }
 
