@@ -8,6 +8,9 @@ import SceneSafety from '../components/childCPR/SceneSafety'
 import Responsiveness from '../components/childCPR/Responsiveness'
 import Collapse from '../components/childCPR/Collapse'
 import ChildCPR from '../components/childCPR/ChildCPR'
+import UseAED from '../components/childCPR/UseAED'
+import ContinueCPR from '../components/childCPR/ContinueCPR'
+import { URLSearchParams } from 'url';
 
 class SaveALife extends React.Component {
   constructor(props){
@@ -41,9 +44,21 @@ class SaveALife extends React.Component {
         return(
           <Collapse onChange={this.onClick}/>
         )
+        case 7:
+        return(
+          <ChildCPR onChange={this.onClick}/>
+        )
         case 8:
         return(
           <ChildCPR onChange={this.onClick}/>
+        )
+        case 9:
+        return(
+          <UseAED onChange={this.onClick}/>
+        )
+        case 10:
+        return(
+          <ContinueCPR onChange={this.onClick}/>
         )
 
       default:  return(
