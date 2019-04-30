@@ -63,6 +63,7 @@ const Brother = () => {
         }
     }, [voices])
 
+  
     const handleVoiceChange = e => {
         setCurrentVoice(voices.filter(v => v.name === e.target.value)[0]);
     }

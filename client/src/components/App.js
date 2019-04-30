@@ -21,7 +21,6 @@ class App extends React.Component {
               <Route path="/" render={props => <AdminLayout {...props} />} />
               <Route path="/rtl" render={props => <RTLLayout {...props} />} />
               <Route path="/test" exact component={Test} />
-
               <Route path="/translate" exact component={Translate} />
               <Route path='/hello' render={props => <AdminLayout {...props} />} />
             </Switch>
