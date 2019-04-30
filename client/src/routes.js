@@ -10,11 +10,11 @@ import UserProfile from "./views/UserProfile.jsx";
 
 var routes = [
   {
-    path: "/dashboard",
-    name: "Statistics",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-chart-pie-36",
-    component: Dashboard,
+    path: "/typography",
+    name: "Infant < 1 Yr Old",
+    rtlName: "طباعة",
+    icon: "tim-icons icon-align-center",
+    component: Typography,
     layout: "/admin"
   },
   {
@@ -27,7 +27,7 @@ var routes = [
   },
   {
     path: "/map",
-    name: "Languages",
+    name: "Language Support",
     rtlName: "خرائط",
     icon: "tim-icons icon-pin",
     component: Map,
@@ -35,7 +35,7 @@ var routes = [
   },
   {
     path: "/notifications",
-    name: "Notifications",
+    name: "Latest Guidelines",
     rtlName: "إخطارات",
     icon: "tim-icons icon-bell-55",
     component: Notifications,
@@ -43,7 +43,7 @@ var routes = [
   },
   {
     path: "/user-profile",
-    name: "Language Processing",
+    name: "AED Map",
     rtlName: "ملف تعريفي للمستخدم",
     icon: "tim-icons icon-single-02",
     component: UserProfile,
@@ -58,16 +58,17 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: "tim-icons icon-align-center",
-    component: Typography,
+    path: "/dashboard",
+    name: "Outcomes",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-chart-pie-36",
+    component: Dashboard,
     layout: "/admin"
   },
+
   {
     path: "/rtl-support",
-    name: "RTL Support",
+    name: "Right to Left Support",
     rtlName: "ار تي ال",
     icon: "tim-icons icon-world",
     component: Rtl,

@@ -10,12 +10,11 @@ class Slider extends React.Component {
             images: [
                 "https://s3.amazonaws.com/youtube-app-novideoadds/final_5cc7655f8e09f60014dd2e6b_320685.gif",
                 "https://media.giphy.com/media/j24n26c67Y8oldLFUY/giphy.gif",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg"
+                "https://media.giphy.com/media/KCYCIIIHFPXaCcD6Z7/giphy.gif",
+                "https://media.giphy.com/media/MBO7UbYqVAtwzOVXoF/giphy.gif",
+                "https://media.giphy.com/media/L13XwMrXZ7v5LKrnej/giphy.gif",
+                "https://media.giphy.com/media/xT0xezQGU5xCDJuCPe/giphy.gif"
+
             ],
             currentIndex: 0,
             translateValue: 0

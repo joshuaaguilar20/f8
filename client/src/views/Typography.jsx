@@ -31,13 +31,20 @@ class AdultCPR extends React.Component {
       listening: !this.state.listening
     }, this.handleListen)
   }
-  speakText = (text) => {
+  speakText = (text = false) => {
     speechSynthesis.cancel();
     console.log('Worked')
-    const utterance = new SpeechSynthesisUtterance(infant[this.state.count])
-    var voices = speechSynthesis.getVoices()
-    utterance.rate = .80
-    speechSynthesis.speak(utterance)
+    if (!text) {
+      const utterance = new SpeechSynthesisUtterance(infant[this.state.count])
+      var voices = speechSynthesis.getVoices()
+      utterance.rate = .80
+      speechSynthesis.speak(utterance)
+    } else {
+      const utterance = new SpeechSynthesisUtterance(`great baby is responsive await EMS and monitor closely`)
+      var voices = speechSynthesis.getVoices()
+      utterance.rate = .80
+      speechSynthesis.speak(utterance)
+    }
   }
 
   checkResponse = async () => {
@@ -51,6 +58,8 @@ class AdultCPR extends React.Component {
         this.changPic();
         console.log(this.state.count)
         await this.speakText()
+      } else if (this.state.finalTranscript.includes('yes')) {
+        await this.speakText()
       }
     } else if (this.state.count === 2) {
       console.log(this.state.finalTranscript);
@@ -58,10 +67,39 @@ class AdultCPR extends React.Component {
         this.state.count++
         this.setState({ count: this.state.count })
         console.log(this.state.count)
+        this.changPic();
+        await this.speakText()
+      }
+    } else if (this.state.count === 3) {
+      console.log(this.state.finalTranscript);
+      if (this.state.finalTranscript.includes('next')) {
+        this.state.count++
+        this.setState({ count: this.state.count })
+        console.log(this.state.count)
+        this.changPic();
+        await this.speakText()
+      }
+    } else if (this.state.count === 4) {
+      console.log(this.state.finalTranscript);
+      if (this.state.finalTranscript.includes('yes')) {
+        this.state.count++
+        this.setState({ count: this.state.count })
+        console.log(this.state.count)
+        this.changPic();
         await this.speakText()
       }
     }
+    else if (this.state.count === 5) {
+      console.log(this.state.finalTranscript);
+      if (this.state.finalTranscript.includes('yes')) {
+        this.state.count++
+        this.setState({ count: this.state.count })
+        console.log(this.state.count)
+        this.changPic();
+        await this.speakText()
+      }
 
+    }
   }
 
 
@@ -91,7 +129,7 @@ class AdultCPR extends React.Component {
       console.log(finalTranscript)
       if (finalTranscript.length > 1) {
         await this.setState({ finalTranscript })
-        await this.setState({ finalTranscript })
+
         interimTranscript = '';
         finalTranscript = '';
         x++
