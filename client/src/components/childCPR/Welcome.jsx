@@ -27,7 +27,7 @@ class SaveALife extends React.Component {
         </Row>
         <Row >
           <Col md='8'>
-          <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
+          <Alert color='success' style={{fontSize:42}}>{prompt}</Alert>
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(2)}>Yes</Button>
