@@ -154,6 +154,17 @@ class Icons extends React.Component {
                       sm="4"
                     >
                       <div className="font-icon-detail">
+                        <i className="fa fa-heart fa-5" />
+                        <p>icon-heart</p>
+                      </div>
+                    </Col>
+                    <Col
+                      className="font-icon-list col-xs-6 col-xs-6"
+                      lg="2"
+                      md="3"
+                      sm="4"
+                    >
+                      <div className="font-icon-detail">
                         <i className="tim-icons icon-bold" />
                         <p>icon-bold</p>
                       </div>

@@ -153,7 +153,7 @@ class AdultCPR extends React.Component {
                 <Button onClick={() => this.speakText()}>Start infant CPR WorkFlow</Button>
                 <Button disabled={false} onClick={this.toggleListen}>
                   <span>
-                    <i class="fa fa-microphone fa-6" aria-hidden="true"></i>
+                    <i className="fa fa-microphone fa-6" aria-hidden="true"></i>
                   </span>
                 </Button>
                 <div id='interim'>{this.state.finalTranscript}</div>
