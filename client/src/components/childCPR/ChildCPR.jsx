@@ -20,17 +20,11 @@ class ChildCPR extends React.Component {
      <Row>
           <Col md='8'>
           <VoiceCard/>
-          <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
-          <Card>
-            <CardBody>
-              <CardImg src='https://s3.us-east-2.amazonaws.com/save-a-life/childBreath.gif' />
-            </CardBody>
-          </Card>
           </Col>
         </Row>
         <Row>
           <Col md='8'>
-
+          <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(9)}>Yes</Button>

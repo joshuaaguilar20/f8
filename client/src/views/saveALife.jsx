@@ -10,7 +10,7 @@ import Collapse from '../components/childCPR/Collapse'
 import ChildCPR from '../components/childCPR/ChildCPR'
 import UseAED from '../components/childCPR/UseAED'
 import ContinueCPR from '../components/childCPR/ContinueCPR'
-import ThankYou from '../components/childCPR/ThankYou'
+import { URLSearchParams } from 'url';
 
 class SaveALife extends React.Component {
   constructor(props){
@@ -28,10 +28,6 @@ class SaveALife extends React.Component {
   }
   render(){
     switch(this.state.step){
-      case 0:
-      return(
-        <ThankYou/>
-      )
       case 1:
       return(
         <Welcome onChange={this.onClick}/>
