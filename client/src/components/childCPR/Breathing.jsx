@@ -14,11 +14,16 @@ class Breathing extends React.Component {
     return(
      <>
      <div className="content">
-        <Row style={{justifyContent:'center'}}>
+     <Row>
+          <Col md='8'>
+          <VoiceCard/>
+          </Col>
+        </Row>
+        <Row>
           <Col md='3'>
           <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
           <div>
-            <Row style={{justifyContent:'center'}}>
+            <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(3)}>Yes</Button>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(2)}>No</Button>
             </Row>

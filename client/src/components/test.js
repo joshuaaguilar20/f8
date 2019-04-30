@@ -1,13 +1,10 @@
 import React from 'react';
-import Lan from '../apis/data'
 import {
     Button,
     Card,
     CardHeader,
     CardBody,
     CardFooter,
-    CardText,
-    FormGroup,
     Form,
     Input,
     Row,
@@ -32,6 +29,9 @@ const useSpeechSynthesis = () => {
         utterance.pitch = pitch;
         utterance.rate = rate;
         synth.current.speak(utterance);
+        
+
+      
     }
 
     useEffect(() => {
@@ -130,6 +130,9 @@ const Brother = () => {
                 <CardFooter>
                   <Button className="btn-fill" color="primary" type="submit">
                     Speak
+                  </Button>
+                    <Button className="btn-fill" color="primary" type="submit">
+                      Stop
                   </Button>
                   
                                 </CardFooter>
