@@ -10,11 +10,11 @@ import saveALife from "./views/saveALife"
 
 
 var routes = [
-   {
-    path: "/save-a-life",
-    name: "Save a Life",
+  {
+    path: "/childcpr",
+    name: "Child CPR",
     rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-chart-pie-36",
+    icon: "tim-icons icon-child",
     component: saveALife,
     layout: "/admin"
   },
