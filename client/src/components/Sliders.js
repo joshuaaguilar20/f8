@@ -9,7 +9,7 @@ class Slider extends React.Component {
         this.state = {
             images: [
                 "https://s3.amazonaws.com/youtube-app-novideoadds/final_5cc7655f8e09f60014dd2e6b_320685.gif",
-                "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
+                "https://media.giphy.com/media/j24n26c67Y8oldLFUY/giphy.gif",
                 "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
                 "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
                 "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",

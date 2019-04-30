@@ -36,7 +36,6 @@ class AdultCPR extends React.Component {
     console.log('Worked')
     const utterance = new SpeechSynthesisUtterance(infant[this.state.count])
     var voices = speechSynthesis.getVoices()
-    console.log(voices)
     utterance.rate = .80
     speechSynthesis.speak(utterance)
   }
@@ -45,11 +44,16 @@ class AdultCPR extends React.Component {
     if (this.state.count === 1) {
       if (this.state.finalTranscript.includes('no')) {
         this.state.count++
-        this.setState({ count: this.state.count })
+        this.setState({
+          count: this.state.count,
+          finalTranscript: ""
+        })
+        this.changPic();
         console.log(this.state.count)
         await this.speakText()
       }
     } else if (this.state.count === 2) {
+      console.log(this.state.finalTranscript);
       if (this.state.finalTranscript.includes('yes')) {
         this.state.count++
         this.setState({ count: this.state.count })
@@ -65,18 +69,18 @@ class AdultCPR extends React.Component {
   handleListen = () => {
     let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     let recognition = new SpeechRecognition();
-    recognition.continous = true
-    recognition.interimResults = true
+    recognition.continous = false
+    recognition.interimResults = false
     recognition.lang = 'en-US'
     console.log('I am Listening ')
-    if (this.state.listening) recognition.start()
-
-    let finalTranscript = ''
+    recognition.start()
+    var finalTranscript = '';
+    var interimTranscript = '';
+    var x = 0;
     recognition.onresult = event => {
-      let interimTranscript = '';
-
       for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcript = event.results[i][0].transcript;
+        const transcript = event.results[i][x].transcript;
+        console.log(`final ${finalTranscript}`);
         if (event.results[i].isFinal) finalTranscript += transcript + ' ';
         else interimTranscript += transcript;
       }
@@ -85,9 +89,15 @@ class AdultCPR extends React.Component {
     recognition.onend = async () => {
       console.log('Speech recognition service disconnected');
       console.log(finalTranscript)
-      await this.setState({ finalTranscript })
-      await recognition.stop()
-      this.checkResponse()
+      if (finalTranscript.length > 1) {
+        await this.setState({ finalTranscript })
+        await this.setState({ finalTranscript })
+        interimTranscript = '';
+        finalTranscript = '';
+        x++
+        await recognition.stop()
+        await this.checkResponse()
+      }
     }
   }
 
