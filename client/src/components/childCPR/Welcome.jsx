@@ -31,7 +31,7 @@ class SaveALife extends React.Component {
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
              <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(2)}>Yes</Button>
-             <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(1)}>No</Button>
+             <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(0)}>No</Button>
             </Row>
           </div>
           </Col>

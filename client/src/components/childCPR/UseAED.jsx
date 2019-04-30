@@ -25,7 +25,7 @@ class useAED extends React.Component {
           <Alert color='success' style={{fontSize:'42px'}}>{prompt}</Alert>
           <div>
             <Row style={{justifyContent:'center', marginBottom:'200px'}}>
-             <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(1)}>Return to Main Menu</Button>
+             <Button style={{fontSize:'32px'}} onClick={()=>this.props.onChange(1)}>Restart</Button>
             </Row>
           </div>
           </Col>
