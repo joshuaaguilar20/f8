@@ -12,13 +12,7 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
+
   Table,
   Row,
   Col,
@@ -208,7 +202,7 @@ class Dashboard extends React.Component {
             <Col lg="6" md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Top Contributors</CardTitle>
+                  <CardTitle tag="h4">Top Contributors In CPR Community</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Table className="tablesorter" responsive>

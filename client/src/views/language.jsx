@@ -5,9 +5,8 @@ import Test from '../components/test';
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
-
-
 class Lang extends React.Component {
+
     render() {
         return (
             <>

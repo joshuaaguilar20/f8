@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import L from 'leaflet'
-
+import '../../src/app.css'
 import {
     Circle,
     FeatureGroup,
@@ -34,6 +34,11 @@ export const aedIcon = new L.Icon({
 
 
 class StreetMap extends Component {
+    componentDidMount() {
+
+        window.FB.XFBML.parse();
+    }
+
 
     render() {
         return (
@@ -62,6 +67,18 @@ class StreetMap extends Component {
                                             </FeatureGroup>
                                         </Map>
                                     </div>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="8">
+                            <Card>
+
+                                <CardHeader>
+                                    <h5 className="title">Share</h5>
+                                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="500" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                </CardHeader>
+                                <CardBody>
+                                    <div class="fb-comments" style={{ color: "white" }} data-href="http://savealifef8.s3-website-us-west-1.amazonaws.com" data-width="500" data-numposts="5" data-colorscheme="dark"></div>
                                 </CardBody>
                             </Card>
                         </Col>

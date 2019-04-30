@@ -85,9 +85,7 @@ class FixedPlugin extends Component {
               />{" "}
               <span className="color-label">DARK MODE</span>{" "}
             </li>
-
             <li className="header-title">Want more components?</li>
-
           </ul>
         </div>
       </div>

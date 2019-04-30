@@ -3,11 +3,11 @@ import { infant } from '../apis/infantTranscript';
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col, Button } from "reactstrap";
 import Slider from '../components/Sliders'
+import { textToSpeech } from '../helpers/textToSpeech';
 speechSynthesis.cancel();
 
-
-
-
+const prompt = 'Welcome to Infant CPR simulation. Are you ready to begin?'
+const question = '...Yes or No?'
 
 class AdultCPR extends React.Component {
   constructor() {
@@ -21,6 +21,13 @@ class AdultCPR extends React.Component {
     this.child = React.createRef();
   }
 
+  componentDidMount() {
+    textToSpeech(prompt)
+    textToSpeech(question)
+    if (window.FB.XFBML) {
+      window.FB.XFBML.parse();
+    }
+  }
 
   changPic = () => {
     this.child.current.goToNextSlide()
@@ -90,6 +97,16 @@ class AdultCPR extends React.Component {
       }
     }
     else if (this.state.count === 5) {
+      console.log(this.state.finalTranscript);
+      if (this.state.finalTranscript.includes('yes')) {
+        this.state.count++
+        this.setState({ count: this.state.count })
+        console.log(this.state.count)
+        this.changPic();
+        await this.speakText()
+      }
+
+    } else if (this.state.count === 6) {
       console.log(this.state.finalTranscript);
       if (this.state.finalTranscript.includes('yes')) {
         this.state.count++
@@ -178,7 +195,7 @@ class AdultCPR extends React.Component {
                 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="500" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
               </CardHeader>
               <CardBody>
-                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="1000" data-numposts="5"></div>
+                <div class="fb-comments" style={{ color: "white" }} data-href="http://savealifef8.s3-website-us-west-1.amazonaws.com" data-width="500" data-numposts="5" data-colorscheme="dark"></div>
               </CardBody>
             </Card>
           </Col>

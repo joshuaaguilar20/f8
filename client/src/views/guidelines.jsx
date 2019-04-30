@@ -52,7 +52,6 @@ class guideLines extends React.Component {
     return (
       <>
         <div className="content">
-
           <Col md="12">
             <Card>
               <CardBody>
@@ -60,8 +59,8 @@ class guideLines extends React.Component {
                   <Row>
                     <Col className="ml-auto mr-auto text-center" md="6">
                       <CardTitle tag="h4">
-                        Notifications Places<p className="category">
-                          Click to view notifications
+                        Documentation Sources<p className="category">
+                          Click to view latest professional Standard
                           </p>
                       </CardTitle>
                     </Col>
@@ -75,62 +74,30 @@ class guideLines extends React.Component {
                             color="primary"
                             href={`https://www.acls-pals-bls.com/algorithms/bls/#chokingadultchild`}
                           >
-                            Choking: Adult to Child Over 1 Year Old
+                            Choking: Adult to Child
                             </Button>
                         </Col>
                         <Col md="4">
                           <Button
-                            block
+
                             color="primary"
                             href={`https://eccguidelines.heart.org/wp-content/uploads/2015/10/2015-AHA-Guidelines-Highlights-English.pdf`}>
-
-                            Latest Professional guidelines
+                            Professional guide
                             </Button>
                         </Col>
                         <Col md="4">
                           <Button
-                            block
+
                             color="primary"
                             href={`https://www.redcross.org/content/dam/redcross/atg/PDF_s/Health___Safety_Services/Training/Adult_ready_reference.pdf`}>
-                            >
-                                Bleeding, CPR, Poisoning and more
+                            Bleeding, CPR, Poisoning
                             </Button>
                         </Col>
                       </Row>
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="ml-auto mr-auto" lg="8">
-                      <Row>
-                        <Col md="4">
-                          <Button
-                            block
-                            color="primary"
-                            onClick={() => this.notify("bl")}
-                          >
-                            Bottom Left
-                            </Button>
-                        </Col>
-                        <Col md="4">
-                          <Button
-                            block
-                            color="primary"
-                            onClick={() => this.notify("bc")}
-                          >
-                            Bottom Center
-                            </Button>
-                        </Col>
-                        <Col md="4">
-                          <Button
-                            block
-                            color="primary"
-                            onClick={() => this.notify("br")}
-                          >
-                            Bottom Right
-                            </Button>
-                        </Col>
-                      </Row>
-                    </Col>
+
                   </Row>
                 </div>
               </CardBody>

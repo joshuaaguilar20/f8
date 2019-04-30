@@ -11,7 +11,7 @@ baby baby are you okay are you okay?
 turn them on their back. Check for pulse and breathing for no more
 than 10 seconds. Does Baby Have a pulse less than 60?`,
 
-    3: `if AED is accessible attach it ASAP. position 2 or 3 fingers on the center of the infant's breastbone
+    3: `position 2 or 3 fingers on the center of the infant's breastbone
 just below the nipple line compress the
 chest one and a half inches in depth. Start Compressions Counting down from 30. Say next to Continue  ? 
 `,

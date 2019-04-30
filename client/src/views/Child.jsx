@@ -4,7 +4,7 @@ import { childText } from '../apis/childText';
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col, Button } from "reactstrap";
 import Slider1 from '../components/Sliders1'
-
+import FacebookProvider, { Comments } from 'react-facebook';
 speechSynthesis.cancel();
 
 
@@ -33,7 +33,11 @@ class ChildCPR extends React.Component {
     componentDidMount() {
         textToSpeech(prompt)
         textToSpeech(question)
+        if (window.FB.XFBML) {
+            window.FB.XFBML.parse();
+        }
     }
+
 
 
     changPic = () => {
@@ -182,7 +186,6 @@ class ChildCPR extends React.Component {
                                 </Button>
                                 <div id='interim'>{this.state.finalTranscript}</div>
                                 <div id='final'></div>
-                                <Button></Button>
                             </CardBody>
                         </Card>
                     </Col>
@@ -203,7 +206,7 @@ class ChildCPR extends React.Component {
                                 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="500" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                             </CardHeader>
                             <CardBody>
-                                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="1000" data-numposts="5"></div>
+                                <div class="fb-comments" style={{ color: "white" }} data-href="http://savealifef8.s3-website-us-west-1.amazonaws.com" data-width="500" data-numposts="5" data-colorscheme="dark"></div>
                             </CardBody>
                         </Card>
                     </Col>
@@ -213,5 +216,6 @@ class ChildCPR extends React.Component {
         );
     }
 }
+
 
 export default ChildCPR;

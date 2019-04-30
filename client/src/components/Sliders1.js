@@ -11,9 +11,9 @@ class Slider1 extends React.Component {
                 "https://media.giphy.com/media/2FpSiQvLSDuPC/giphy.gif",
                 "https://s3.us-east-2.amazonaws.com/save-a-life/checkforsafety.gif",
                 "https://s3.us-east-2.amazonaws.com/save-a-life/childBreathingPulse.gif",
-                "https://media.giphy.com/media/J6VQYJImp5cFbWHehH/giphy.gif",
-                "https://media.giphy.com/media/MBO7UbYqVAtwzOVXoF/giphy.gif",
-                "https://media.giphy.com/media/L13XwMrXZ7v5LKrnej/giphy.gif",
+                "https://media.giphy.com/media/Zb5NfInjzOWGdReQ48/giphy.gif", //
+                "https://media.giphy.com/media/THBmlzeqM1S79eGkFa/giphy.gif",
+                "https://media.giphy.com/media/Zb5NfInjzOWGdReQ48/giphy.gif",
                 "https://media.giphy.com/media/xT0xezQGU5xCDJuCPe/giphy.gif"
 
             ],
