@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import L from 'leaflet'
+import React, { Component, Fragment } from 'react';
+import L from 'leaflet';
+import * as aedLayer from '../components/assets/aedLayer.json';
 
 import {
-    Circle,
     FeatureGroup,
-    LayerGroup,
     Map,
     Popup,
-    Rectangle,
     TileLayer,
     Marker
 } from 'react-leaflet';
@@ -19,9 +17,9 @@ import 'leaflet/dist/leaflet.css';
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
 const center = [37.330721, -121.889432]
-const rectangle = [[51.49, -0.08], [51.5, -0.06]]
+const label = "AED"
 
-export const aedIcon = new L.Icon({
+const aedIcon = new L.Icon({
     iconUrl: require('../components/assets/img/aedicon.png'),
     iconRetinaUrl: require('../components/assets/img/aedicon.png'),
     iconAnchor: [0, 0],
@@ -32,8 +30,43 @@ export const aedIcon = new L.Icon({
     shadowAnchor: [7, 10],
 })
 
+const MyPopupMarker = ({ content, position }) => (
+    <Marker position={position} icon={aedIcon}>
+        <Popup>{content}</Popup>
+    </Marker>
+)
+
+const MyMarkersList = ({ markers }) => {
+    const items = markers.map(({ key, ...props }) => (
+        <MyPopupMarker key={key} {...props} />
+    ))
+    return items
+}
+
+const processMarkerLayer = (layer) => {
+    return layer.map((each, i) => {
+        return {
+            key: i,
+            position: [each.geometry.coordinates[1], each.geometry.coordinates[0]],
+            content: label
+        }
+    })
+}
+
+const markers = processMarkerLayer(aedLayer.default.features);
+const points = markers.map(m => m.position);
+const bounds = L.latLngBounds(points);
+
+const NearbyAED = () => MyPopupMarker({ content: label, position: center })
 
 class StreetMap extends Component {
+    constructor() {
+        super();
+        this.state = {
+            markers,
+            bounds
+        }
+    }
 
     render() {
         return (
@@ -50,15 +83,14 @@ class StreetMap extends Component {
                                         style={{ position: "relative", overflow: "hidden" }}
                                     >
 
-                                        <Map style={{ height: "80vh" }} center={center} zoom={18}>
+                                        <Map ref={this.mapRef} style={{ height: "80vh" }} bounds={this.state.bounds} zoom={5}>
                                             <TileLayer
                                                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                             />
-                                            <FeatureGroup color="purple">
-                                                <Marker position={center} icon={aedIcon} >
-                                                    <Popup>AED</Popup>
-                                                </Marker>
+                                            <FeatureGroup>
+                                                <MyMarkersList markers={this.state.markers} />
+                                                <NearbyAED />
                                             </FeatureGroup>
                                         </Map>
                                     </div>
