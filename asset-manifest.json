@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9104c073.chunk.css",
+    "main.js": "/static/js/main.da1a0ee1.chunk.js",
+    "main.js.map": "/static/js/main.da1a0ee1.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.bcdce821.chunk.css": "/static/css/2.bcdce821.chunk.css",
+    "static/js/2.eb541b2b.chunk.js": "/static/js/2.eb541b2b.chunk.js",
+    "static/js/2.eb541b2b.chunk.js.map": "/static/js/2.eb541b2b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.2c93a77addd506594a7ded5e1dfda7a5.js": "/precache-manifest.2c93a77addd506594a7ded5e1dfda7a5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.bcdce821.chunk.css.map": "/static/css/2.bcdce821.chunk.css.map",
+    "static/css/main.9104c073.chunk.css.map": "/static/css/main.9104c073.chunk.css.map",
+    "static/media/anime3.png": "/static/media/anime3.bd6820f1.png",
+    "static/media/child3.2019-04-29 15_47_54.gif": "/static/media/child3.2019-04-29 15_47_54.841ef830.gif",
+    "static/media/childgif.gif": "/static/media/childgif.61964746.gif",
+    "static/media/nucleo-icons.css": "/static/media/nucleo.f0b489a5.woff",
+    "static/media/react-logo.png": "/static/media/react-logo.eb6be414.png"
+  }
+}
